@@ -6,9 +6,7 @@ from bs4 import BeautifulSoup
 
 url = "https://www.daangn.com/fleamarket/"
 response = requests.get(url)
-
 soup = BeautifulSoup(response.text, "html.parser") 
-
 #파일 생성
 f = open("dangn.txt", "wt", encoding="utf-8")
 posts = soup.find_all("div", attrs={"class":"card-desc"})
